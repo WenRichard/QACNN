@@ -75,7 +75,7 @@ def lemmatize():
                 answer = line_info[5]
                 question = ' '.join(map(lambda x: wn_lemmatizer.lemmatize(x), nltk.word_tokenize(question)))
                 answer = ' '.join(map(lambda x: wn_lemmatizer.lemmatize(x), nltk.word_tokenize(answer)))
-                if set_name != 'test':
+                if 'test' not in set_name:
                     label = line_info[6]
                     fout.write('\t'.join([q_id, question, a_id, answer, label]) + '\n')
                 else:
